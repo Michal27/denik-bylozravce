@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import PageTemplate from "../templates/PageTemplate";
-import Image from "../components/Image";
+import Image from "../components/image/Image";
 import SEO from "../components/seo/SEO";
 import Button from "../components/button/Button";
 
