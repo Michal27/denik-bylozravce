@@ -2,22 +2,22 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import "./secondaryHeadline.less";
 
-class SecondaHeadline extends React.Component {
+class SecondaryHeadline extends React.Component {
 	render() {
 		return (
-			<h1 className = 'component-secondary-headline'>
+			<h2 className = 'component-secondary-headline'>
 				{this.props.text}
-			</h1>
+			</h2>
 		);
 	}
 }
 
-SecondaHeadline.propTypes = {
+SecondaryHeadline.propTypes = {
 	text: PropTypes.string
 };
 
-SecondaHeadline.defaultProps = {
+SecondaryHeadline.defaultProps = {
 	text: ''
 };
 
-export default SecondaHeadline;
+export default SecondaryHeadline;
