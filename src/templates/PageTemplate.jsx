@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Navigation from "../components/navigation/Navigation";
+import "./pageTemplate.less";
 
 class PageTemplate extends React.Component {
 	/*const data = useStaticQuery(graphql`
@@ -15,7 +17,9 @@ class PageTemplate extends React.Component {
 	render() {
 		return (
 			<>
-				<header>I'm cool header</header>
+				<header className = 'component-header'>
+					<Navigation/>
+				</header>
 				<main>{this.props.children}</main>
 				<footer>
 					© {new Date().getFullYear()}, Built with
