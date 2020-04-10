@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import './recipeContent.less';
 import SecondaryHeadline from "../secondaryHeadline/SecondaryHeadline";
@@ -23,13 +22,5 @@ class RecipeContent extends React.Component {
 		);
 	}
 }
-
-RecipeContent.propTypes = {
-	text: PropTypes.string
-};
-
-RecipeContent.defaultProps = {
-	text: ''
-};
 
 export default RecipeContent;

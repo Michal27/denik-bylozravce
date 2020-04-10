@@ -1,19 +1,19 @@
 import React from "react";
-import RecipeContent from "../components/recipeContent/RecipeContent";
-import PageTemplate from "../templates/PageTemplate";
-import SEO from "../components/seo/SEO";
 import MainHeadline from "../components/mainHeadline/MainHeadline";
+import RecipeContent from "../components/recipeContent/RecipeContent";
+import SEO from "../components/seo/SEO";
+import PageTemplate from "../templates/PageTemplate";
 
-class IndexPage extends React.Component {
+class RecipePage extends React.Component {
 	render() {
 		return (
 			<PageTemplate>
-				<SEO title = 'Recept' />
+				<SEO title = 'Recept'/>
 				<MainHeadline text='Chana Masala'/>
-				<RecipeContent text='1'/>
+				<RecipeContent/>
 			</PageTemplate>
 		);
 	}
 }
 
-export default IndexPage;
+export default RecipePage;
