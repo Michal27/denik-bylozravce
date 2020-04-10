@@ -9,7 +9,7 @@ class RecipePage extends React.Component {
 		return (
 			<PageTemplate>
 				<SEO title = 'Recept'/>
-				<MainHeadline text='Chana Masala'/>
+				<MainHeadline text = 'Chana Masala'/>
 				<RecipeContent/>
 			</PageTemplate>
 		);
