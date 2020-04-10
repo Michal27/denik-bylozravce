@@ -17,16 +17,35 @@ exports.createPages = async({ actions, graphql }) => {
 				}
 			}
 		}
-	`);
+	`);//TODO: reduce this structure later (only necessary keys)
 
-	recipesData.allRecipesJson.nodes.forEach((recipe) => {
-		const slug = recipe.slug;
-		const image = recipe.image;
+	const allRecipes = recipesData.allRecipesJson.nodes;
+	allRecipes.forEach((currentRecipe) => {
+		const slug = currentRecipe.slug;
+		const image = currentRecipe.image;
+		const { relatedRecipesSlugs, relatedRecipesImages } = _getRelatedRecipes(allRecipes, currentRecipe);
 
 		actions.createPage({
 			path: `/recept/${slug}`,
 			component: require.resolve(`./src/pagesDynamic/recipe.jsx`),
-			context: { slug, image }
+			context: { slug, image, relatedRecipesSlugs, relatedRecipesImages }
 		});
 	});
+
+	function _getRelatedRecipes(allRecipes, currentRecipe) {
+		const relatedRecipesSlugs = [];
+		const relatedRecipesImages = [];
+
+		allRecipes.forEach((recipe, index) => {
+			if (index < 3) {
+				relatedRecipesSlugs.push(recipe.slug);
+				relatedRecipesImages.push(recipe.image.split('.').shift());
+			}
+		});
+
+		return {
+			relatedRecipesSlugs,
+			relatedRecipesImages
+		};
+	}
 };

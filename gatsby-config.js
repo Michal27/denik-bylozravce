@@ -10,10 +10,10 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `./data`
+				name: 'data',
+				path: `${__dirname}/data`
 			}
 		},
-		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -21,6 +21,7 @@ module.exports = {
 				path: `${__dirname}/assets/img`
 			}
 		},
+		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{

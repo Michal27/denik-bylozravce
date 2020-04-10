@@ -17,8 +17,8 @@ class RecipePage extends React.Component {
 			<PageTemplate>
 				<SEO title = 'Recept'/>
 				<MainHeadline text = 'Chana Masala'/>
+				<Image image = { this.props.data.relatedRecipesImages.nodes[0] }/>
 				<RecipeContent/>
-				<Image image = { this.props.data.image }/>
 			</PageTemplate>
 		);
 	}
@@ -27,8 +27,8 @@ class RecipePage extends React.Component {
 export default RecipePage;
 
 export const query = graphql`
-	query($slug: String!, $image: String!) {
-		recipesJson(slug: { eq: $slug }) {
+	query($slug: String!, $image: String!, $relatedRecipesSlugs: [String], $relatedRecipesImages: [String]) {
+		currentRecipe: recipesJson(slug: { eq: $slug }) {
 			categories
 			image
 			ingredients
@@ -41,10 +41,35 @@ export const query = graphql`
 			slug
 			tags
 		}
+		relatedRecipes: allRecipesJson(filter: {slug: {in: $relatedRecipesSlugs}}) {
+			nodes {
+				categories
+				image
+				ingredients
+				ingredientsSections
+				instructions
+				instructionsSections
+				name
+				note
+				servings
+				slug
+				tags
+			}
+		}
 		image: file(relativePath: { eq: $image }) {
 			childImageSharp {
 				fluid(maxWidth: 300) {
 					...GatsbyImageSharpFluid
+				}
+			}
+		}
+		relatedRecipesImages: allFile(filter: {sourceInstanceName: {eq: "images"}, name: {in: $relatedRecipesImages}}) {
+			nodes {
+				name
+				childImageSharp {
+					fluid(maxWidth: 300) {
+						...GatsbyImageSharpFluid
+					}
 				}
 			}
 		}
