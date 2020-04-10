@@ -13,11 +13,21 @@ class RecipePage extends React.Component {
 			return null;
 		}
 
+		const {
+			currentRecipe,
+			relatedRecipes,
+			currentRecipeImage,
+			relatedRecipesImages
+		} = data;
+		//TODO:these unused keys should be passed into component RecipeContent to show new component FollowingRecipes :)
+
+		const name = currentRecipe.name;
+
 		return (
 			<PageTemplate>
-				<SEO title = 'Recept'/>
-				<MainHeadline text = 'Chana Masala'/>
-				<Image image = { this.props.data.relatedRecipesImages.nodes[0] }/>
+				<SEO title = { name }/>
+				<MainHeadline text = { name }/>
+				<Image image = { currentRecipeImage }/>
 				<RecipeContent/>
 			</PageTemplate>
 		);
@@ -56,7 +66,7 @@ export const query = graphql`
 				tags
 			}
 		}
-		image: file(relativePath: { eq: $image }) {
+		currentRecipeImage: file(relativePath: { eq: $image }) {
 			childImageSharp {
 				fluid(maxWidth: 300) {
 					...GatsbyImageSharpFluid
