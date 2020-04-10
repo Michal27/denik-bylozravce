@@ -1,19 +1,19 @@
 import React from "react";
 import MainHeadline from "../components/mainHeadline/MainHeadline";
-import SecondaryHeadline from "../components/secondaryHeadline/SecondaryHeadline";
+import RecipeContent from "../components/recipeContent/RecipeContent";
 import SEO from "../components/seo/SEO";
 import PageTemplate from "../templates/PageTemplate";
 
-class IndexPage extends React.Component {
+class RecipePage extends React.Component {
 	render() {
 		return (
 			<PageTemplate>
 				<SEO title = 'Recept'/>
-				<MainHeadline text = 'Chana masala'/>
-				<SecondaryHeadline text = 'Postup'/>
+				<MainHeadline text = 'Chana Masala'/>
+				<RecipeContent/>
 			</PageTemplate>
 		);
 	}
 }
 
-export default IndexPage;
+export default RecipePage;
