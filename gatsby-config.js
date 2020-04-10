@@ -6,6 +6,13 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-plugin-less`,
+		`gatsby-transformer-json`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `./data`
+			}
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,

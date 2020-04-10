@@ -1,27 +1,27 @@
+import PropTypes from 'prop-types';
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
 class Image extends React.Component {
 	render() {
+		const { image } = this.props;
+
+		if (!image) {
+			return null;
+		}
+
 		return (
-			<Img fluid = { this.props.data.placeholderImage.childImageSharp.fluid } />
+			<Img fluid = { image.childImageSharp.fluid } />
 		);
 	}
 }
 
-export default () => {
-	const data = useStaticQuery(graphql`
-		query {
-			placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 300) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-		}
-	`);
-
-	return <Image data = { data }/>;
+Image.propTypes = {
+	image: PropTypes.object
 };
+
+Image.defaultProps = {
+	image: null
+};
+
+export default Image;

@@ -1,0 +1,49 @@
+[
+	{
+		"name": "Chana Masala",
+		"slug": "chana-masala",
+		"image": "gatsby-astronaut.png",
+		"servings": "4",
+		"categories": ["Hlavní jídla", "Indická kuchyně"],
+		"tags": ["Cizrna"],
+		"ingredients": [
+			[
+				"1 střední cibule",
+				"2 lžičky mletého kmínu",
+				"sůl",
+				"1 lžička mletého zázvoru",
+				"kousek chilli papričky (dávám cca 0,5 cm)",
+				"2 lžičky mletého koriandru",
+				"1 lžička chilli",
+				"1 lžička mleté kurkumy",
+				"1 rajčatové pyré – 500 ml",
+				"1 konzerva krájených rajčat – 400 ml",
+				"500-700 g uvařené cizrny (nebo 2 plechovky scezené)",
+				"1 lžička koření garam masala",
+				"2-3 lžičky cukru"
+			]
+		],
+		"ingredientsSections": [
+			"baseSection"
+		],
+		"instructions": [
+			[
+				"Cibuli nakrájíme nadrobno a orestujeme ji ve velkém hrnci s kmínem a troškou soli.",
+				"Kousek chilli papričky nakrájíme nadrobno, se zázvorem ji přidáme k cibuli a zamícháme.",
+				"Přidáme mletý koriandr, chilli a kurkumu, dobře promícháme a pokud se směs začne přilepovat, podlijeme trochou vody.",
+				"Ke směsi přidáme krájená rajčata, rajčatové pyré, cizrnu a osolíme.",
+				"Pokud je směs moc hustá, přidáme 1⁄2 až 1 hrnek vody, aby měla směs konzistenci polohusté polévky, vařením se pak zredukuje a zhoustne.",
+				"Vaříme cca 20 minut, poté dochutíme solí, chilli a cukrem.",
+				"Odstavíme z plotny a přidáme koření garam masala.",
+				"Podáváme s rýží, naanem, či půl na půl."
+			]
+		],
+		"instructionsSections": [
+			"baseSection"
+		],
+		"note": [
+			"Toto je první odstavec poznámky.",
+			"Toto je druhý odstavec poznámky."
+		]
+	}
+]

@@ -93,6 +93,7 @@ export default (props) => {
 	return (
 		<SEO
 			siteInfo = { site }
-			{...props}/>
+			{...props}
+		/>
 	);
 };
