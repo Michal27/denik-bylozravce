@@ -9,8 +9,8 @@ class IndexPage extends React.Component {
 		return (
 			<PageTemplate>
 				<SEO title = 'Recept'/>
-				<MainHeadline text='Chana masala'/>
-				<SecondaryHeadline text='Postup'/>
+				<MainHeadline text = 'Chana masala'/>
+				<SecondaryHeadline text = 'Postup'/>
 			</PageTemplate>
 		);
 	}
