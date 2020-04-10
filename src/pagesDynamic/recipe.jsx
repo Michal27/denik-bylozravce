@@ -1,7 +1,9 @@
 import React from "react";
+import Image from "../components/image/Image";
+import MainHeadline from "../components/mainHeadline/MainHeadline";
+import RecipeContent from "../components/recipeContent/RecipeContent";
 import SEO from "../components/seo/SEO";
 import PageTemplate from "../templates/PageTemplate";
-import Image from "../components/image/Image";
 
 class RecipePage extends React.Component {
 	render() {
@@ -14,6 +16,8 @@ class RecipePage extends React.Component {
 		return (
 			<PageTemplate>
 				<SEO title = 'Recept'/>
+				<MainHeadline text = 'Chana Masala'/>
+				<RecipeContent/>
 				<Image image = { this.props.data.image }/>
 			</PageTemplate>
 		);
