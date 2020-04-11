@@ -20,7 +20,9 @@ class PageTemplate extends React.Component {
 				<header className = 'page-template-header'>
 					<Navigation/>
 				</header>
-				<main>{this.props.children}</main>
+				<main className = 'page-template-main'>
+					{this.props.children}
+				</main>
 				<footer>
 					© {new Date().getFullYear()}, Built with
 					{` `}
