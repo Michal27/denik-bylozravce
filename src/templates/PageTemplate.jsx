@@ -16,8 +16,8 @@ class PageTemplate extends React.Component {
 
 	render() {
 		return (
-			<>
-				<header className = 'component-header'>
+			<div className = 'page-template'>
+				<header className = 'page-template-header'>
 					<Navigation/>
 				</header>
 				<main>{this.props.children}</main>
@@ -26,7 +26,7 @@ class PageTemplate extends React.Component {
 					{` `}
 					<a href='https://www.gatsbyjs.org'>Gatsby</a>
 				</footer>
-			</>
+			</div>
 		);
 	}
 }
