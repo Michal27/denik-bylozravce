@@ -6,7 +6,6 @@ import './navigation.less';
 
 class Navigation extends React.Component {
 	render() {
-		console.log('this.props: ', this.props);
 		return (
 			<div className = 'component-navigation'>
 				<div className = 'component-navigation-logo'>
@@ -53,7 +52,6 @@ export default (props) => {
 			}
 			`
 	);
-	console.log('logo: ', logo);
 
 	return (
 		<Navigation
