@@ -69,7 +69,7 @@ export const query = graphql`
 		}
 		currentRecipeImage: file(relativePath: { eq: $image }) {
 			childImageSharp {
-				fluid(maxWidth: 1200) {
+				fluid(maxWidth: 2048) {
 					...GatsbyImageSharpFluid
 				}
 			}
