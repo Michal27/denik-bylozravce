@@ -6,15 +6,33 @@
 			flex-flow: row nowrap;
 			justify-content: space-between;
 			align-items: flex-start;
+
+			@media @tablet-wide {
+				flex-flow: column nowrap;
+				justify-content: flex-start;
+			}
 		}
 
 		&left {
 			margin-right: 8%;
 			width: 67%;
+
+			@media @tablet-wide {
+				order: 2;
+
+				margin-right: 0;
+				width: 100%;
+			}
 		}
 
 		&right {
 			width: 25%;
+
+			@media @tablet-wide {
+				order: 1;
+
+				width: 100%;
+			}
 		}
 	}
 }

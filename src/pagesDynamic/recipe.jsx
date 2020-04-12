@@ -4,6 +4,7 @@ import MainHeadline from "../components/mainHeadline/MainHeadline";
 import RecipeContent from "../components/recipeContent/RecipeContent";
 import SEO from "../components/seo/SEO";
 import PageTemplate from "../templates/PageTemplate";
+import '../base.less';
 
 class RecipePage extends React.Component {
 	render() {
@@ -68,7 +69,7 @@ export const query = graphql`
 		}
 		currentRecipeImage: file(relativePath: { eq: $image }) {
 			childImageSharp {
-				fluid(maxWidth: 1200) {
+				fluid(maxWidth: 2048) {
 					...GatsbyImageSharpFluid
 				}
 			}
