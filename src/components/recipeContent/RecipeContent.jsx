@@ -10,21 +10,25 @@ class RecipeContent extends React.Component {
 
 		return (
 			<div className = 'component-recipe-content'>
-				<div className = 'component-recipe-content-left'>
-					<SecondaryHeadline text = 'Postup'/>
-					<RecipeInstructions
-						instructions = { currentRecipe.instructions }
-						instructionsSections = { currentRecipe.instructionsSections }
-					/>
+				<div className = 'component-recipe-content-row'>
+					<div className = 'component-recipe-content-left'>
+						<SecondaryHeadline text='Postup'/>
+						<RecipeInstructions
+							instructions = { currentRecipe.instructions }
+							instructionsSections = { currentRecipe.instructionsSections }
+						/>
+					</div>
+					<div className = 'component-recipe-content-right'>
+						<SecondaryHeadline text='Ingredience'/>
+					</div>
 				</div>
-				<div className = 'component-recipe-content-right'>
-					<SecondaryHeadline text = 'Ingredience'/>
-				</div>
-				<div className = 'component-recipe-content-left'>
-					<SecondaryHeadline text = 'Další recepty'/>
-				</div>
-				<div className = 'component-recipe-content-right'>
-					<SecondaryHeadline text = 'Kategorie receptu'/>
+				<div className = 'component-recipe-content-row'>
+					<div className = 'component-recipe-content-left'>
+						<SecondaryHeadline text='Další recepty'/>
+					</div>
+					<div className = 'component-recipe-content-right'>
+						<SecondaryHeadline text='Kategorie receptu'/>
+					</div>
 				</div>
 			</div>
 		);

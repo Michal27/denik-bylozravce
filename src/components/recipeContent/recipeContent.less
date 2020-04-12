@@ -1,15 +1,19 @@
 .component-recipe-content {
 	&- {
-		&left {
-			float: left;
+		&row {
+			display: flex;
 
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		&left {
 			margin-right: 8%;
 			width: 67%;
 		}
 
 		&right {
-			float: right;
-
 			width: 25%;
 		}
 	}

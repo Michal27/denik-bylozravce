@@ -1,3 +1,14 @@
+const pxToRem = require('postcss-pxtorem');
+const pxToRemOptions = {
+	rootValue: 16,
+	unitPrecision: 4,
+	propList: ['*', '!font', '!*border*'],
+	selectorBlackList: [/\w*::(?:after|before)$/],
+	replace: true,
+	mediaQuery: false,
+	minPixelValue: 4
+};
+
 module.exports = {
 	siteMetadata: {
 		title: `Gatsby Default Starter`,
@@ -5,7 +16,13 @@ module.exports = {
 		author: `@gatsbyjs`
 	},
 	plugins: [
-		`gatsby-plugin-less`,
+		{
+			resolve: `gatsby-plugin-less`,
+			options: {
+				postCssPlugins: [pxToRem(pxToRemOptions)],
+				modifyVars: require(`./src/lessVariables.js`)
+			}
+		},
 		`gatsby-transformer-json`,
 		{
 			resolve: `gatsby-source-filesystem`,
