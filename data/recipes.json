@@ -42,8 +42,52 @@
 			"baseSection"
 		],
 		"note": [
-			"Toto je první odstavec poznámky.",
-			"Toto je druhý odstavec poznámky."
+			"Recept na naan najdete zde."
+		]
+	},
+	{
+		"name": "Mrkvové muffiny",
+		"slug": "mrkvove-muffiny",
+		"image": "mrkvove-muffiny.jpg",
+		"servings": "15",
+		"categories": ["Sladké", "Velikonoce"],
+		"tags": ["Mrkev", "Banán", "Lněné semínko"],
+		"ingredients": [
+			[
+				"2 hrnky hladké mouky",
+				"1/3 hrnku cukru",
+				"špetka soli",
+				"1 lžička skořice",
+				"1/2 lžičky prášku do pečiva",
+				"1/2 hrnku slunečnicových semínek nebo rozinek (volitelné)"
+			],
+			[
+				"2 lžičky lněného semínka + 6 lžiček vody",
+				"1 hrnek nastrouhané mrkve",
+				"1 zralý banán",
+				"100 - 150 ml rostlinného mléka (např. sojového)",
+				"1/3 hrnku oleje",
+				"2 lžíce vinného octa"
+			]
+		],
+		"ingredientsSections": [
+			"Suché", "Mokré"
+		],
+		"instructions": [
+			[
+				"Troubu předehřejeme na 180 °C a nachystáme si formičky na muffiny.",
+				"Nejprve smícháme všechny suché ingredience ve velké míse.",
+				"Lněné semínko rozmixujeme najemno a smícháme jej s vodou.",
+				"Banán rozmačkáme vidličkou a smícháme ve druhé míse se zbytkem mokrých ingrediencí včetně nastrouhané mrkve a směsí z lněného semínka.",
+				"Poté promícháme mokré se suchými a vzniklou hmotou plníme formy na muffiny.",
+				"Pečeme asi 20 minut. (Otestujeme párátkem - když se na něj těsto nepřichytí, máme hotovo.)"
+			]
+		],
+		"instructionsSections": [
+			"baseSection"
+		],
+		"note": [
+
 		]
 	}
 ]
