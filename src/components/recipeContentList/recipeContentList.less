@@ -1,0 +1,37 @@
+.component-recipe-content-list {
+	&- {
+		&headline {
+			font-weight: lighter;
+		}
+
+		&ordered {
+			position: relative;
+
+			padding-left: 40px;
+
+			list-style: none;
+			counter-reset: my-counter;
+
+			.component-recipe-content-list-point {
+				counter-increment: my-counter;
+
+				&::before {
+					position: absolute;
+					left: 0;
+
+					content: counter(my-counter) ". ";
+					font-weight: bold;
+					color: #99cb34;
+				}
+			}
+		}
+
+		&unordered {
+			list-style: circle outside none;
+		}
+
+		&point {
+			margin-bottom: 1rem;
+		}
+	}
+}

@@ -1,31 +1,3 @@
 .component-recipe-instructions {
 	font-size: 1.25rem;
-
-	&- {
-		&headline {
-			font-size: 1.5rem;
-			font-weight: lighter;
-		}
-
-		&point {
-			margin-bottom: 1rem;
-		}
-	}
-}
-
-ol {
-	padding-left: 40px;
-
-	list-style: none;
-	counter-reset: my-counter;
-}
-
-ol li {
-	counter-increment: my-counter;
-}
-
-ol li::before {
-	content: counter(my-counter) ". ";
-	font-weight: bold;
-	color: #99cb34;
 }

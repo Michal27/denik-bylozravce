@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import './recipeContent.less';
+import RecipeIngredients from '../recipeIngredients/RecipeIngredients';
 import RecipeInstructions from '../recipeInstructions/RecipeInstructions';
 import SecondaryHeadline from "../secondaryHeadline/SecondaryHeadline";
 
@@ -16,10 +17,16 @@ class RecipeContent extends React.Component {
 						<RecipeInstructions
 							instructions = { currentRecipe.instructions }
 							instructionsSections = { currentRecipe.instructionsSections }
+							renderOrderedList = { true }
 						/>
 					</div>
 					<div className = 'component-recipe-content-right'>
 						<SecondaryHeadline text='Ingredience'/>
+						<RecipeIngredients
+							ingredients = { currentRecipe.ingredients }
+							ingredientsSections = { currentRecipe.ingredientsSections }
+							renderOrderedList = { false }
+						/>
 					</div>
 				</div>
 				<div className = 'component-recipe-content-row'>
