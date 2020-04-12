@@ -2,24 +2,38 @@
 	display: flex;
 
 	margin: 0 auto;
-	width: @page-width;
+	width: 100%;
+	max-width: @page-width;
 
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;
 
+	@media @content-max-width {
+		padding: 0 @page-margin-big;
+	}
+
+	@media @tablet {
+		padding: 0 @page-margin-small;
+	}
+
 	&- {
 		&logo {
 			width: 300px;
+			flex: 0 0 auto;
 		}
 
 		&links {
 			display: flex;
 
-			width: 900px;
+			flex: 0 1 auto;
 
 			justify-content: flex-end;
+
+			@media @mobile {
+				display: none;
+			}
 		}
 
 		&link {

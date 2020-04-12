@@ -12,7 +12,15 @@
 
 		&main {
 			margin: 0 auto;
-			width: @page-width;
+			max-width: @page-width;
+
+			@media @content-max-width {
+				padding: 0 @page-margin-big;
+			}
+
+			@media @tablet {
+				padding: 0 @page-margin-small;
+			}
 		}
 	}
 }
