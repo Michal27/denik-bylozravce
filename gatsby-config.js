@@ -11,9 +11,9 @@ const pxToRemOptions = {
 
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
+		title: `Deník býložravce`,
 		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`
+		author: `Michal Malaník && Dominika Kozlová`
 	},
 	plugins: [
 		{
@@ -44,13 +44,13 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
-				start_url: `/`,
-				background_color: `#663399`,
-				theme_color: `#663399`,
+				name: `Deník býložravce`,
+				short_name: `Deník býložravce`, // eslint-disable-line camelcase
+				start_url: `/`, // eslint-disable-line camelcase
+				background_color: `#b7da71`, // eslint-disable-line camelcase
+				theme_color: `#b7da71`, // eslint-disable-line camelcase
 				display: `minimal-ui`,
-				icon: `assets/img/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `assets/img/gatsby-icon.png` // This path is relative to the root of the site.
 			}
 		}
 		// this (optional) plugin enables Progressive Web App + Offline functionality
