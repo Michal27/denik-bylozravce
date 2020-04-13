@@ -20,15 +20,17 @@ class RecipeContentList extends React.Component {
 			let renderedList;
 
 			if (renderOrderedList) {
-				renderedList = <ol
-					className = 'component-recipe-content-list-ordered'>
-					{ this._renderContentList(sectionContent) }
-				</ol>;
+				renderedList =
+					<ol
+						className = 'component-recipe-content-list-ordered'>
+						{ this._renderContentList(sectionContent) }
+					</ol>;
 			} else {
-				renderedList = <ul
-					className = 'component-recipe-content-list-unordered'>
-					{ this._renderContentList(sectionContent) }
-				</ul>;
+				renderedList =
+					<ul
+						className = 'component-recipe-content-list-unordered'>
+						{ this._renderContentList(sectionContent) }
+					</ul>;
 			}
 
 			return (
