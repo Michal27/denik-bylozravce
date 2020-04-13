@@ -3,11 +3,15 @@
 		&header {
 			display: flex;
 
-			margin-bottom: 32px;
+			margin-bottom: 64px;
 			border-bottom: 2px solid @primary-color;
-			height: 100px;
+			height: 130px;
 
 			align-items: center;
+
+			@media @mobile {
+				margin-bottom: 40px;
+			}
 		}
 
 		&main {
