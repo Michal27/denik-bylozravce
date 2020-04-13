@@ -5,14 +5,14 @@ import './recipeInstructions.less';
 
 class RecipeInstructions extends React.Component {
 	render() {
-		const { instructions, instructionsSections, renderOrderedList } = this.props;
+		const { instructions, instructionsSections } = this.props;
 
 		return (
 			<div className = 'component-recipe-instructions'>
 				<RecipeContentList
 					sectionsContentList = { instructions }
 					sectionTitles = { instructionsSections }
-					renderOrderedList = { renderOrderedList }
+					renderOrderedList = { true }
 				/>
 			</div>
 		);
@@ -22,13 +22,11 @@ class RecipeInstructions extends React.Component {
 RecipeInstructions.propTypes = {
 	instructions: PropTypes.array,
 	instructionsSections: PropTypes.array,
-	renderOrderedList: PropTypes.bool
 };
 
 RecipeInstructions.defaultProps = {
 	instructions: [],
 	instructionsSections: [],
-	renderOrderedList: true
 };
 
 export default RecipeInstructions;

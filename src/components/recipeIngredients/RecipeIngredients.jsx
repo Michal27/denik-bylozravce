@@ -5,14 +5,14 @@ import './recipeIngredients.less';
 
 class RecipeIngredients extends React.Component {
 	render() {
-		const { ingredients, ingredientsSections, renderOrderedList } = this.props;
+		const { ingredients, ingredientsSections } = this.props;
 
 		return (
 			<div className = 'component-recipe-ingredients'>
 				<RecipeContentList
 					sectionsContentList = { ingredients }
 					sectionTitles = { ingredientsSections }
-					renderOrderedList = { renderOrderedList }
+					renderOrderedList = { false }
 				/>
 			</div>
 		);
@@ -21,14 +21,12 @@ class RecipeIngredients extends React.Component {
 
 RecipeIngredients.propTypes = {
 	ingredients: PropTypes.array,
-	ingredientsSections: PropTypes.array,
-	renderOrderedList: PropTypes.bool
+	ingredientsSections: PropTypes.array
 };
 
 RecipeIngredients.defaultProps = {
 	ingredients: [],
-	ingredientsSections: [],
-	renderOrderedList: false
+	ingredientsSections: []
 };
 
 export default RecipeIngredients;

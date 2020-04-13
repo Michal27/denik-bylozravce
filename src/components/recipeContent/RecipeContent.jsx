@@ -17,7 +17,6 @@ class RecipeContent extends React.Component {
 						<RecipeInstructions
 							instructions = { currentRecipe.instructions }
 							instructionsSections = { currentRecipe.instructionsSections }
-							renderOrderedList = { true }
 						/>
 					</div>
 					<div className = 'component-recipe-content-right'>
@@ -25,7 +24,6 @@ class RecipeContent extends React.Component {
 						<RecipeIngredients
 							ingredients = { currentRecipe.ingredients }
 							ingredientsSections = { currentRecipe.ingredientsSections }
-							renderOrderedList = { false }
 						/>
 					</div>
 				</div>
