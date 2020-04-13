@@ -8,7 +8,7 @@ to: src/components/<%= h.changeCase.camelCase(name) %>/<%= h.changeCase.pascalCa
 -%>
 import PropTypes from 'prop-types';
 import React from 'react';
-import './<%= pascalCaseName %>.less';
+import './<%= camelCaseName %>.less';
 
 class <%= pascalCaseName %> extends React.Component {
 	render() {

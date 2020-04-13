@@ -1,4 +1,10 @@
 .component-recipe-content {
+	font-size: 19px;
+
+	@media @mobile {
+		font-size: 17px;
+	}
+
 	&- {
 		&row {
 			display: flex;
@@ -15,22 +21,26 @@
 
 		&left {
 			margin-right: 8%;
+			margin-bottom: 64px;
 			width: 67%;
 
 			@media @tablet-wide {
 				order: 2;
 
 				margin-right: 0;
+				margin-bottom: 32px;
 				width: 100%;
 			}
 		}
 
 		&right {
+			margin-bottom: 64px;
 			width: 25%;
 
 			@media @tablet-wide {
 				order: 1;
 
+				margin-bottom: 32px;
 				width: 100%;
 			}
 		}

@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "../components/image/Image";
 import MainHeadline from "../components/mainHeadline/MainHeadline";
+import MainImage from "../components/mainImage/MainImage";
 import RecipeContent from "../components/recipeContent/RecipeContent";
 import SEO from "../components/seo/SEO";
 import PageTemplate from "../templates/PageTemplate";
@@ -29,7 +29,7 @@ class RecipePage extends React.Component {
 			<PageTemplate>
 				<SEO title = { name }/>
 				<MainHeadline text = { name }/>
-				<Image image = { currentRecipeImage }/>
+				<MainImage image = { currentRecipeImage }/>
 				<RecipeContent currentRecipe = { currentRecipe }/>
 			</PageTemplate>
 		);
