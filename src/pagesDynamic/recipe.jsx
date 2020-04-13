@@ -4,7 +4,8 @@ import MainHeadline from "../components/mainHeadline/MainHeadline";
 import RecipeContent from "../components/recipeContent/RecipeContent";
 import SEO from "../components/seo/SEO";
 import PageTemplate from "../templates/PageTemplate";
-import '../base.less';
+import '../less/reset.less';
+import '../less/base.less';
 
 class RecipePage extends React.Component {
 	render() {

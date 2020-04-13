@@ -10,7 +10,7 @@
     "declaration-empty-line-before": null,
     "no-duplicate-selectors": null,
     "no-descending-specificity": null,
-    "string-quotes": "double",
+    "string-quotes": "single",
     "declaration-no-important": true,
     "keyframe-declaration-no-important": true,
     "selector-max-id": 0,
