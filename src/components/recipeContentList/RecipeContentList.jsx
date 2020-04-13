@@ -22,12 +22,12 @@ class RecipeContentList extends React.Component {
 			if (renderOrderedList) {
 				renderedList =
 					<ol className = 'component-recipe-content-list-ordered'>
-						{ this._renderContentList(sectionContent) }
+						{ this._renderContentListItems(sectionContent) }
 					</ol>;
 			} else {
 				renderedList =
 					<ul className = 'component-recipe-content-list-unordered'>
-						{ this._renderContentList(sectionContent) }
+						{ this._renderContentListItems(sectionContent) }
 					</ul>;
 			}
 
@@ -42,7 +42,7 @@ class RecipeContentList extends React.Component {
 		return sectionsList;
 	}
 
-	_renderContentList(sectionContent) {
+	_renderContentListItems(sectionContent) {
 		return (
 			sectionContent.map((contentPoint) => {
 				return (
