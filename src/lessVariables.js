@@ -13,7 +13,8 @@ const mediaQueries = {
 	'content-max-width': `(max-width: ${pageWidth + 2 * pageMarginTablet}px)`
 };
 const colors = {
-	'primary-color': '#b7da71'
+	'primary-color': '#b7da71',
+	'numbers-color': '#99cb34'
 };
 
 module.exports = Object.assign({}, dimensions, mediaQueries, colors);

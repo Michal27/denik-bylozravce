@@ -20,18 +20,20 @@ class RecipeContentList extends React.Component {
 			let renderedList;
 
 			if (renderOrderedList) {
-				renderedList = <ol className = 'component-recipe-content-list-ordered'>
+				renderedList = <ol
+					className = 'component-recipe-content-list-ordered'>
 					{ this._renderContentList(sectionContent) }
 				</ol>;
 			} else {
-				renderedList = <ul className = 'component-recipe-content-list-unordered'>
+				renderedList = <ul
+					className = 'component-recipe-content-list-unordered'>
 					{ this._renderContentList(sectionContent) }
 				</ul>;
 			}
 
 			return (
 				<div>
-					{ this._renderSectionsTitle(sectionTitles[index]) }
+					{ this._renderSectionsTitle(sectionTitles && sectionTitles[index]) }
 					{ renderedList }
 				</div>
 			);
@@ -41,19 +43,19 @@ class RecipeContentList extends React.Component {
 	}
 
 	_renderContentList(sectionContent) {
-		const contentList = sectionContent.map((contentPoint) => {
-			return (
-				<li className = 'component-recipe-content-list-point'>
-					{ contentPoint }
-				</li>
-			);
-		});
-
-		return contentList;
+		return (
+			sectionContent.map((contentPoint) => {
+				return (
+					<li className = 'component-recipe-content-list-point'>
+						{ contentPoint }
+					</li>
+				);
+			})
+		);
 	}
 
 	_renderSectionsTitle(sectionTitle) {
-		if (sectionTitle === IGNORED_SECTION_TITLE) {
+		if (!sectionTitle || sectionTitle === IGNORED_SECTION_TITLE) {
 			return null;
 		}
 

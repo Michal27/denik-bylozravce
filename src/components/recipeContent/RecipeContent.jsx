@@ -9,6 +9,10 @@ class RecipeContent extends React.Component {
 	render() {
 		const { currentRecipe } = this.props;
 
+		if (!currentRecipe) {
+			return null;
+		}
+
 		return (
 			<div className = 'component-recipe-content'>
 				<div className = 'component-recipe-content-row'>
