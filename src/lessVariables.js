@@ -14,7 +14,7 @@ const mediaQueries = {
 };
 const colors = {
 	'primary-color': '#b7da71',
-	'numbers-color': '#99cb34'
+	'ordered-list-numbers-color': '#99cb34'
 };
 
 module.exports = Object.assign({}, dimensions, mediaQueries, colors);
