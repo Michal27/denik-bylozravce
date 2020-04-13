@@ -20,7 +20,7 @@ module.exports = {
 			resolve: `gatsby-plugin-less`,
 			options: {
 				postCssPlugins: [pxToRem(pxToRemOptions)],
-				modifyVars: require(`./src/lessVariables.js`)
+				modifyVars: require(`./src/less/lessVariables.js`)
 			}
 		},
 		`gatsby-transformer-json`,
