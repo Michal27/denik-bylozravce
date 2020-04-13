@@ -30,7 +30,7 @@ class RecipePage extends React.Component {
 				<SEO title = { name }/>
 				<MainHeadline text = { name }/>
 				<Image image = { currentRecipeImage }/>
-				<RecipeContent/>
+				<RecipeContent currentRecipe = { currentRecipe }/>
 			</PageTemplate>
 		);
 	}

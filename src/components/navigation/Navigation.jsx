@@ -42,9 +42,9 @@ export default (props) => {
 	const { logo } = useStaticQuery(
 		graphql`
 			query {
-				logo: file(relativePath: { eq: "logo_0.png" }) {
+				logo: file(relativePath: { eq: "logo_1.png" }) {
 					childImageSharp {
-						fluid(maxWidth: 300) {
+						fluid(maxWidth: 400) {
 							...GatsbyImageSharpFluid
 						}
 					}
