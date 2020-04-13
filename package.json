@@ -40,8 +40,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public",
-    "dev": "gatsby develop",
+    "deploy": "git lfs pull && gatsby build && gh-pages -d public",
+    "dev": "git lfs pull && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
