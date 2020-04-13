@@ -5,6 +5,7 @@ const dimensions = {
 	'page-width': `${pageWidth}px`,
 	'page-margin-big': `${pageMarginTablet}px`,
 	'page-margin-small': '16px'
+	'instructions-margin': '16px'
 };
 const mediaQueries = {
 	mobile: '(max-width: 540px)',
@@ -16,5 +17,8 @@ const colors = {
 	'primary-color': '#b7da71',
 	'ordered-list-numbers-color': '#99cb34'
 };
+const fonts = {
+	'h3-font-size': '22px'
+};
 
-module.exports = Object.assign({}, dimensions, mediaQueries, colors);
+module.exports = Object.assign({}, dimensions, mediaQueries, colors, fonts);

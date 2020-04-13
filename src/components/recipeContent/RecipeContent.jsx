@@ -3,6 +3,7 @@ import React from 'react';
 import './recipeContent.less';
 import RecipeIngredients from '../recipeIngredients/RecipeIngredients';
 import RecipeInstructions from '../recipeInstructions/RecipeInstructions';
+import RecipeNote from '../recipeNote/RecipeNote';
 import SecondaryHeadline from "../secondaryHeadline/SecondaryHeadline";
 
 class RecipeContent extends React.Component {
@@ -22,6 +23,7 @@ class RecipeContent extends React.Component {
 							instructions = { currentRecipe.instructions }
 							instructionsSections = { currentRecipe.instructionsSections }
 						/>
+						<RecipeNote note = { currentRecipe.note }/>
 					</div>
 					<div className = 'component-recipe-content-right'>
 						<SecondaryHeadline text='Ingredience'/>
