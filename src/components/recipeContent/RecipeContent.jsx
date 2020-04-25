@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import './recipeContent.less';
+import RecipeCategories from  '../recipeCategories/RecipeCategories';
 import RecipeIngredients from '../recipeIngredients/RecipeIngredients';
 import RecipeInstructions from '../recipeInstructions/RecipeInstructions';
 import SecondaryHeadline from "../secondaryHeadline/SecondaryHeadline";
@@ -37,6 +38,10 @@ class RecipeContent extends React.Component {
 					</div>
 					<div className = 'component-recipe-content-right'>
 						<SecondaryHeadline text='Kategorie receptu'/>
+						<RecipeCategories
+							categories = { currentRecipe.categories }
+							tags = { currentRecipe.tags }
+						/>
 					</div>
 				</div>
 			</div>
