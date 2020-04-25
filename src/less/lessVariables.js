@@ -4,7 +4,7 @@ const pageMarginTablet = 32;
 const dimensions = {
 	'page-width': `${pageWidth}px`,
 	'page-margin-big': `${pageMarginTablet}px`,
-	'page-margin-small': '16px'
+	'page-margin-small': '16px',
 	'instructions-margin': '16px'
 };
 const mediaQueries = {
