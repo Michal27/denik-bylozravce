@@ -21,17 +21,44 @@ class RecipePage extends React.Component {
 			currentRecipeImage,
 			relatedRecipesImages
 		} = data;
-		//TODO:these unused keys should be passed into component RecipeContent to show new component FollowingRecipes :)
 
-		const name = currentRecipe.name;
+		const currentRecipeName = currentRecipe.name;
+		const relatedRecipesWithImages = this._assignImagesToRecipes(relatedRecipes, relatedRecipesImages);
 
 		return (
 			<PageTemplate>
-				<SEO title = { name }/>
-				<MainHeadline text = { name }/>
+				<SEO title = { currentRecipeName }/>
+				<MainHeadline text = { currentRecipeName }/>
 				<MainImage image = { currentRecipeImage }/>
-				<RecipeContent currentRecipe = { currentRecipe }/>
+				<RecipeContent
+					currentRecipe = { currentRecipe }
+					relatedRecipes = { relatedRecipesWithImages }
+				/>
 			</PageTemplate>
+		);
+	}
+
+	_assignImagesToRecipes(recipesNodes, imagesNodes) {
+		if (
+			!this._isValidDataObject(recipesNodes) ||
+			!this._isValidDataObject(imagesNodes)
+		) {
+			return [];
+		}
+
+		const recipes = recipesNodes.nodes.slice(0);
+		const images = imagesNodes.nodes.slice(0);
+
+		return recipes.map((recipe, index) => {
+			return Object.assign({}, recipe, { imageGatsbyObject: images[index] });
+		});
+	}
+
+	_isValidDataObject(dataObject) {
+		return (
+			dataObject &&
+			dataObject.nodes &&
+			Array.isArray(dataObject.nodes)
 		);
 	}
 }
@@ -79,7 +106,7 @@ export const query = graphql`
 			nodes {
 				name
 				childImageSharp {
-					fluid(maxWidth: 300) {
+					fluid(maxWidth: 1024) {
 						...GatsbyImageSharpFluid
 					}
 				}

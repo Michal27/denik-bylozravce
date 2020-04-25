@@ -3,11 +3,12 @@ import React from 'react';
 import './recipeContent.less';
 import RecipeIngredients from '../recipeIngredients/RecipeIngredients';
 import RecipeInstructions from '../recipeInstructions/RecipeInstructions';
-import SecondaryHeadline from "../secondaryHeadline/SecondaryHeadline";
+import RelatedRecipes from '../relatedRecipes/RelatedRecipes';
+import SecondaryHeadline from '../secondaryHeadline/SecondaryHeadline';
 
 class RecipeContent extends React.Component {
 	render() {
-		const { currentRecipe } = this.props;
+		const { currentRecipe, relatedRecipes } = this.props;
 
 		if (!currentRecipe) {
 			return null;
@@ -34,6 +35,7 @@ class RecipeContent extends React.Component {
 				<div className = 'component-recipe-content-row'>
 					<div className = 'component-recipe-content-left'>
 						<SecondaryHeadline text='Další recepty'/>
+						<RelatedRecipes recipes = { relatedRecipes }/>
 					</div>
 					<div className = 'component-recipe-content-right'>
 						<SecondaryHeadline text='Kategorie receptu'/>
@@ -45,11 +47,13 @@ class RecipeContent extends React.Component {
 }
 
 RecipeContent.propTypes = {
-	currentRecipe: PropTypes.object
+	currentRecipe: PropTypes.object,
+	relatedRecipes: PropTypes.arrayOf(PropTypes.object)
 };
 
 RecipeContent.defaultProps = {
-	currentRecipe: null
+	currentRecipe: null,
+	relatedRecipes: []
 };
 
 
