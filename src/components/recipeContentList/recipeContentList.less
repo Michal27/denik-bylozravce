@@ -1,12 +1,15 @@
 .component-recipe-content-list {
 	&- {
 		&headline {
-			font-weight: lighter;
+			margin-bottom: @instructions-margin;
+
+			font-size: @h3-font-size;
 		}
 
 		&ordered {
 			position: relative;
 
+			margin-bottom: @instructions-margin;
 			padding-left: 40px;
 
 			list-style: none;
@@ -19,7 +22,7 @@
 					position: absolute;
 					left: 0;
 
-					content: counter(my-counter) ". ";
+					content: counter(my-counter) '. ';
 					font-weight: bold;
 					color: @ordered-list-numbers-color;
 				}
