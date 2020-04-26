@@ -14,6 +14,7 @@ const mediaQueries = {
 };
 const colors = {
 	'primary-color': '#b7da71',
+	'secondary-color': '#f7ffe8',
 	'ordered-list-numbers-color': '#99cb34'
 };
 
