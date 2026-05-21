@@ -1,62 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link, useStaticQuery, graphql } from "gatsby";
-import Image from "../image/Image";
 import './navigation.less';
 
-class Navigation extends React.Component {
-	render() {
-		return (
-			<div className = 'component-navigation'>
-				<div className = 'component-navigation-logo'>
-					<Image image = { this.props.logo }/>
-				</div>
-				<div className = 'component-navigation-links'>
-					<Link
-						className = 'component-navigation-link'
-						to = '/recepty'
-					>
-						Recepty
-					</Link>
-					<Link
-						className = 'component-navigation-link'
-						to = '/clanky'
-					>
-						Články
-					</Link>
-				</div>
+function Navigation({ logoSrc }) {
+	return (
+		<div className='component-navigation'>
+			<div className='component-navigation-logo'>
+				<img src={logoSrc} alt='Deník býložravce' />
 			</div>
-		);
-	}
+			<div className='component-navigation-links'>
+				<a className='component-navigation-link' href='/recepty'>Recepty</a>
+				<a className='component-navigation-link' href='/clanky'>Články</a>
+			</div>
+		</div>
+	);
 }
 
 Navigation.propTypes = {
-	logo: PropTypes.object
+	logoSrc: PropTypes.string.isRequired
 };
 
-Navigation.defaultProps = {
-	logo: null
-};
-
-export default (props) => {
-	const { logo } = useStaticQuery(
-		graphql`
-			query {
-				logo: file(relativePath: { eq: "logo_1.png" }) {
-					childImageSharp {
-						fluid(maxWidth: 400) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
-			}
-			`
-	);
-
-	return (
-		<Navigation
-			logo = { logo }
-			{...props}
-		/>
-	);
-};
+export default Navigation;

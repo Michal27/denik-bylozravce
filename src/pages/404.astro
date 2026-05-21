@@ -1,0 +1,14 @@
+---
+import { getImage } from 'astro:assets';
+import logoImg from '../assets/img/logo_1.png';
+import Layout from '../layouts/Layout.astro';
+import PageTemplate from '../templates/PageTemplate.jsx';
+
+const logo = await getImage({ src: logoImg, width: 300, format: 'webp' });
+---
+<Layout title="404">
+	<PageTemplate logoSrc={logo.src}>
+		<h1>Stránka nenalezena</h1>
+		<p>Tato stránka neexistuje.</p>
+	</PageTemplate>
+</Layout>

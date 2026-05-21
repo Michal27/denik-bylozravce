@@ -3,38 +3,25 @@ import PropTypes from "prop-types";
 import Navigation from "../components/navigation/Navigation";
 import "./pageTemplate.less";
 
-class PageTemplate extends React.Component {
-	/*const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-		`)*/
-
-	render() {
-		return (
-			<div className = 'page-template'>
-				<header className = 'page-template-header'>
-					<Navigation/>
-				</header>
-				<main className = 'page-template-main'>
-					{this.props.children}
-				</main>
-				<footer>
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href='https://www.gatsbyjs.org'>Gatsby</a>
-				</footer>
-			</div>
-		);
-	}
+function PageTemplate({ children, logoSrc }) {
+	return (
+		<div className='page-template'>
+			<header className='page-template-header'>
+				<Navigation logoSrc={logoSrc} />
+			</header>
+			<main className='page-template-main'>
+				{children}
+			</main>
+			<footer>
+				© {new Date().getFullYear()} Deník býložravce
+			</footer>
+		</div>
+	);
 }
 
 PageTemplate.propTypes = {
-	children: PropTypes.node.isRequired
+	children: PropTypes.node.isRequired,
+	logoSrc: PropTypes.string.isRequired
 };
 
 export default PageTemplate;

@@ -1,0 +1,29 @@
+.component-recipe-categories {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 8px;
+
+	&__tag {
+		display: inline-block;
+		padding: 6px 14px;
+
+		border-radius: 20px;
+		background-color: @primary-color;
+
+		font-size: 16px;
+		color: black;
+		text-decoration: none;
+
+		transition: background-color 0.15s ease;
+
+		&:hover {
+			background-color: darken(@primary-color, 10%);
+		}
+
+		@media @mobile {
+			font-size: 14px;
+			padding: 5px 12px;
+		}
+	}
+}
