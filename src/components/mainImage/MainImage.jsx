@@ -3,28 +3,31 @@ import React from 'react';
 import Image from "../image/Image";
 import './mainImage.less';
 
-class MainImage extends React.Component {
-	render() {
-		const { image } = this.props;
-
-		if (!image) {
-			return null;
-		}
-
-		return (
-			<div className = 'component-main-image'>
-				<Image image = { image }/>
-			</div>
-		);
+function MainImage({ imageData = null }) {
+	if (!imageData) {
+		return null;
 	}
+
+	return (
+		<div className='component-main-image'>
+			<Image
+				src={imageData.src}
+				srcSet={imageData.srcSet}
+				width={imageData.width}
+				height={imageData.height}
+				sizes='(max-width: 768px) 100vw, (max-width: 1264px) calc(100vw - 64px), 1200px'
+			/>
+		</div>
+	);
 }
 
 MainImage.propTypes = {
-	image: PropTypes.object
-};
-
-MainImage.defaultProps = {
-	image: null
+	imageData: PropTypes.shape({
+		src: PropTypes.string,
+		srcSet: PropTypes.string,
+		width: PropTypes.number,
+		height: PropTypes.number
+	})
 };
 
 export default MainImage;

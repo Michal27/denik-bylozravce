@@ -1,0 +1,26 @@
+---
+import '../less/reset.less';
+import '../less/base.less';
+
+const { title, description = '' } = Astro.props;
+const siteTitle = 'Deník býložravce';
+const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+---
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{fullTitle}</title>
+		{description && <meta name="description" content={description} />}
+		<meta property="og:title" content={fullTitle} />
+		{description && <meta property="og:description" content={description} />}
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={fullTitle} />
+		{description && <meta name="twitter:description" content={description} />}
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

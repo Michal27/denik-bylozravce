@@ -13,35 +13,66 @@
 			justify-content: space-between;
 			align-items: flex-start;
 
+			margin-bottom: 40px;
+
 			@media @tablet-wide {
 				flex-flow: column nowrap;
 				justify-content: flex-start;
+			}
+
+			@media @tablet-wide {
+				margin-bottom: 26px;
 			}
 		}
 
 		&left {
 			margin-right: 8%;
-			margin-bottom: 64px;
 			width: 67%;
 
 			@media @tablet-wide {
 				order: 2;
 
 				margin-right: 0;
-				margin-bottom: 32px;
 				width: 100%;
 			}
 		}
 
 		&right {
-			margin-bottom: 64px;
 			width: 25%;
 
 			@media @tablet-wide {
 				order: 1;
 
-				margin-bottom: 32px;
+				margin-bottom: 26px;
 				width: 100%;
+			}
+		}
+
+		&full {
+			margin-bottom: 48px;
+			width: 100%;
+
+			@media @mobile {
+				margin-bottom: 32px;
+			}
+		}
+
+		&ingredients-header {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+
+			margin-bottom: 32px;
+			border-bottom: 2px solid @primary-color;
+
+			@media @mobile {
+				margin-bottom: 16px;
+			}
+
+			.component-secondary-headline {
+				border-bottom: none;
+				margin-bottom: 0;
 			}
 		}
 	}

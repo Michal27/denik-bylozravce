@@ -1,0 +1,65 @@
+---
+import { getImage } from 'astro:assets';
+import logoImg from '../../assets/img/logo_1.png';
+import recipes from '../../../data/recipes.json';
+import Layout from '../../layouts/Layout.astro';
+import PageTemplate from '../../templates/PageTemplate.jsx';
+import MainHeadline from '../../components/mainHeadline/MainHeadline.jsx';
+import MainImage from '../../components/mainImage/MainImage.jsx';
+import RecipeContent from '../../components/recipeContent/RecipeContent.jsx';
+
+export async function getStaticPaths() {
+	const MAIN_WIDTHS = [768, 1200, 1600];
+	const THUMB_WIDTHS = [400, 600, 900];
+	const imageModules = import.meta.glob('/src/assets/img/*.{jpg,jpeg,png}', { eager: true });
+
+	async function buildImageData(filename, widths) {
+		const mod = imageModules[`/src/assets/img/${filename}`];
+		if (!mod) return null;
+
+		const imageMeta = mod.default;
+		const aspectRatio = imageMeta.height / imageMeta.width;
+
+		const processed = await Promise.all(
+			widths.map(w => getImage({ src: imageMeta, width: w, format: 'webp', quality: 80 }))
+		);
+
+		return {
+			src: processed[processed.length - 1].src,
+			srcSet: processed.map((img, i) => `${img.src} ${widths[i]}w`).join(', '),
+			width: widths[widths.length - 1],
+			height: Math.round(widths[widths.length - 1] * aspectRatio)
+		};
+	}
+
+	return await Promise.all(
+		recipes.map(async recipe => {
+			const relatedRecipes = await Promise.all(
+				recipes.slice(0, 3).map(async r => ({
+					...r,
+					imageData: await buildImageData(r.image, THUMB_WIDTHS)
+				}))
+			);
+
+			return {
+				params: { slug: recipe.slug },
+				props: {
+					recipe,
+					mainImageData: await buildImageData(recipe.image, MAIN_WIDTHS),
+					relatedRecipes
+				}
+			};
+		})
+	);
+}
+
+const { recipe, mainImageData, relatedRecipes } = Astro.props;
+const logo = await getImage({ src: logoImg, width: 300, format: 'webp' });
+---
+<Layout title={recipe.name}>
+	<PageTemplate logoSrc={logo.src}>
+		<MainHeadline text={recipe.name} />
+		<MainImage imageData={mainImageData} />
+		<RecipeContent currentRecipe={recipe} relatedRecipes={relatedRecipes} />
+	</PageTemplate>
+</Layout>

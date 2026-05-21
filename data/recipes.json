@@ -4,8 +4,13 @@
 		"slug": "chana-masala",
 		"image": "chana-masala.jpg",
 		"servings": "4",
-		"categories": ["Hlavní jídla", "Indická kuchyně"],
-		"tags": ["Cizrna"],
+		"categories": [
+			{ "name": "Hlavní jídla", "slug": "hlavni-jidla" },
+			{ "name": "Indická kuchyně", "slug": "indicka-kuchyne" }
+		],
+		"tags": [
+			{ "name": "Cizrna", "slug": "cizrna" }
+		],
 		"ingredients": [
 			[
 				"1 střední cibule",
@@ -50,8 +55,15 @@
 		"slug": "mrkvove-muffiny",
 		"image": "mrkvove-muffiny.jpg",
 		"servings": "15",
-		"categories": ["Sladké", "Velikonoce"],
-		"tags": ["Mrkev", "Banán", "Lněné semínko"],
+		"categories": [
+			{ "name": "Sladké", "slug": "sladke" },
+			{ "name": "Velikonoce", "slug": "velikonoce" }
+		],
+		"tags": [
+			{ "name": "Mrkev", "slug": "mrkev" },
+			{ "name": "Banán", "slug": "banan" },
+			{ "name": "Lněné semínko", "slug": "lnene-seminko" }
+		],
 		"ingredients": [
 			[
 				"2 hrnky hladké mouky",

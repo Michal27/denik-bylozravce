@@ -1,0 +1,14 @@
+---
+import { getImage } from 'astro:assets';
+import logoImg from '../assets/img/logo_1.png';
+import Layout from '../layouts/Layout.astro';
+import PageTemplate from '../templates/PageTemplate.jsx';
+
+const logo = await getImage({ src: logoImg, width: 300, format: 'webp' });
+---
+<Layout title="Recepty">
+	<PageTemplate logoSrc={logo.src}>
+		<h1>Deník býložravce</h1>
+		<p>Rostlinné recepty.</p>
+	</PageTemplate>
+</Layout>

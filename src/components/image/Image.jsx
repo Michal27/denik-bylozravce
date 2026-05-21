@@ -1,27 +1,31 @@
 import PropTypes from 'prop-types';
 import React from "react";
-import Img from "gatsby-image";
 
-class Image extends React.Component {
-	render() {
-		const { image } = this.props;
-
-		if (!image) {
-			return null;
-		}
-
-		return (
-			<Img fluid = { image.childImageSharp.fluid } />
-		);
+function Image({ src = null, srcSet = null, sizes = null, width = null, height = null, alt = '' }) {
+	if (!src) {
+		return null;
 	}
+
+	return (
+		<img
+			src={src}
+			srcSet={srcSet || undefined}
+			sizes={sizes || undefined}
+			width={width || undefined}
+			height={height || undefined}
+			alt={alt}
+			loading='lazy'
+		/>
+	);
 }
 
 Image.propTypes = {
-	image: PropTypes.object
-};
-
-Image.defaultProps = {
-	image: null
+	src: PropTypes.string,
+	srcSet: PropTypes.string,
+	sizes: PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	alt: PropTypes.string
 };
 
 export default Image;
